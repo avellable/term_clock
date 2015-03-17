@@ -10,7 +10,9 @@ URLS.each do |u|
   q_tmp = []
   xp_htm = Nokogiri::HTML htm
   t = xp_htm.xpath('//*[@class="quoteText"]')
+
   t.each {|s| q_tmp << s.text}
+
   q_tmp.each {|q| quotes << q.strip.scan(/([^\n]*)/)[0][0]}
 end
 
